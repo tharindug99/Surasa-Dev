@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,  useEffect } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import logo from '../../src/assets/logos/Surasa Logo.png';
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -10,13 +10,31 @@ function NavBar() {
   };
 
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="bg-NavBarBG">
+    <div className={`bg-NavBarBG ${isScrolled ? 'fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90' : ''}`}>
       <nav className="flex justify-between items-center h-20">
         {/* Logo */}
         <div className="flex ">
