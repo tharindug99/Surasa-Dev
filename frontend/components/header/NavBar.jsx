@@ -27,7 +27,7 @@ function NavBar() {
         <ul className="hidden space-x-4 lg:flex ml-24">
           <li>
             <Link
-              className="text-black hover:text-gray-700 cursor-pointer"
+              className="text-black hover:text-[#291603] cursor-pointer"
               activeClass="active"
               to="home"
               spy={true}
@@ -40,7 +40,7 @@ function NavBar() {
           </li>
           <li>
             <Link
-              className="text-black hover:text-gray-700 cursor-pointer"
+              className="text-black hover:text-[#291603] cursor-pointer"
               activeClass="active"
               to="about"
               spy={true}
@@ -53,7 +53,7 @@ function NavBar() {
           </li>
           <li>
             <Link
-              className="text-black hover:text-gray-700 cursor-pointer"
+              className="text-black hover:text-[#291603] cursor-pointer"
               activeClass="active"
               to="contact"
               spy={true}
@@ -66,7 +66,7 @@ function NavBar() {
           </li>
           <li>
             <Link
-              className="text-black hover:text-gray-700 cursor-pointer"
+              className="text-black hover:text-[#291603] cursor-pointer"
               activeClass="active"
               to="register"
               spy={true}
@@ -80,10 +80,18 @@ function NavBar() {
         </ul>
         {/* Register and Login Buttons */}
         <div className="mr-10 hidden lg:flex md:flex sm:flex">
-            <button className="bg-transparent text-[#F0C903] border-[#F0C903] border-2 font-semibold py-2 px-6 rounded-3xl mr-2">
+            <button className="
+            bg-transparent      hover:bg-[#291603] 
+            text-[#F0C903]      hover:text-white
+            border-[#F0C903]    hover:border-[#291603]
+            border-2 font-semibold py-2 px-6 rounded-3xl mr-2">
               Register
             </button>
-            <button className="bg-SurasaYellow border-[#F0C903] border-2 text-white font-semibold py-2 px-6 rounded-3xl mr-2">
+            <button className="
+            bg-SurasaYellow   hover:bg-[#291603]
+            border-[#F0C903]  hover:text-white
+            text-white                  hover:border-[#291603]
+            border-2 font-semibold py-2 px-6 rounded-3xl mr-2">
               Login
             </button>
             
@@ -93,7 +101,7 @@ function NavBar() {
                 size={40}
                 onClick={toggleDropdown}/> 
                 {showDropdown && (
-        <div className="absolute top-16 right-0 bg-white shadow-md p-10 mr-20">
+        <div className="absolute top-16 right-0 bg-white shadow-md mx-4 p-16 px-28">
           {/* Dropdown items */}
           <ul className="flex flex-col space-y-2">
             <li>
@@ -119,7 +127,7 @@ function NavBar() {
                 offset={-70}
                 duration={500}
               >
-                About Us
+                About
               </Link>
             </li>
             <li>
@@ -132,7 +140,7 @@ function NavBar() {
               offset={-70}
               duration={500}
             >
-              Contact Us
+              Contact
             </Link>
           </li>
           <li>
