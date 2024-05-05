@@ -1,79 +1,36 @@
-import React, { useState } from 'react';
-import Footer from '../components/footer/Footer';
+import React from 'react';
+import backgroundImg from '../src/assets/images/surasabg.jpg';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can add your logic here to handle form submission, such as sending the data to a server or processing it.
-    console.log('Form submitted with data:', formData);
-  };
-
+const ContactUs = () => {
   return (
-    <div id="contact">
-      <section className=" m-5">
-        <div className="px-4 mx-auto max-w-screen-md ">
-          <h2 className="heading text-center">Contact Us</h2>
-          <p className="mb-8 lg:mb-16 font-light text-center mt-4">
-            Got a technical issue? Want to send feedback? Send us a message, and we will be in touch with you shortly!
-          </p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="max-w-screen-md mx-auto px-4">
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">
-              Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="p-2 w-full border rounded-md"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-gray-700 text-sm font-medium mb-2">
-              Your Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="4"
-              className="p-2 w-full border rounded-md"
-              required
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 text-white px-4 py-2 rounded-md"
-          >
-            Send Message
-          </button>
-        </form>
-      </section>
-
-      
+    <div  
+      id="contact"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center" 
+      style={{backgroundImage: `url(${backgroundImg})`, zIndex: 1}}>
+      <div className="absolute inset-0 bg-white opacity-40 z-0"></div>
+      <h1 className="text-4xl font-bold text-center mb-8 relative z-10">
+        Contact Us
+      </h1>
+      <p className="text-center mb-8 relative z-10">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor
+        sapien et nisl tincidunt commodo.
+      </p>
+      <div className="flex flex-col items-center relative z-10">
+        <input
+          type="email"
+          className="bg-gray-200 rounded-md px-4 py-2 mb-4 w-64"
+          placeholder="Your Email"
+        />
+        <textarea
+          className="bg-gray-200 rounded-md px-4 py-2 mb-4 w-64 h-32"
+          placeholder="Your Message"
+        ></textarea>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Submit
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Contact;
+export default ContactUs;
