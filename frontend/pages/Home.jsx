@@ -7,7 +7,7 @@ const Home = () => {
       id="home"
       className="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center" 
       style={{backgroundImage: `url(${backgroundImg})`, zIndex: 1}}>
-      <div className="absolute inset-0 bg-white opacity-50 z-0"></div>
+      <div className="absolute inset-0 bg-white opacity-40 z-0"></div>
       <h1 className="text-4xl font-bold text-center mb-8 relative z-10">
         Welcome to Surasa
       </h1>
