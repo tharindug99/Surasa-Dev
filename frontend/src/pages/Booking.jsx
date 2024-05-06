@@ -27,7 +27,8 @@ function Booking() {
   };
 
   return (
-    <div className="booking-container flex flex-col md:flex-row items-center">
+    <div  id="booking"
+          className="booking-container flex flex-col md:flex-row items-center">
       <div className="w-full md:w-1/2 md:pr-4">
         <Calendar
           localizer={localizer}

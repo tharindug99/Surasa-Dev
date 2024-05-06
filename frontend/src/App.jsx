@@ -8,6 +8,7 @@ import ContactUs from './pages/ContactUs'
 import Register from './pages/Register'
 import Booking from './pages/Booking'
 
+
 function App() {
   const [count, setCount] = useState(0)
 
