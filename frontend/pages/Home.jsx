@@ -1,11 +1,14 @@
 import React from 'react';
 import backgroundImg from '../src/assets/images/surasabg.jpg';
+import MenuImg from '../src/assets/images/MenuImg.jpg';
+import FoodItem1 from '../src/assets/images/FoodItem1.jpg'
+import SurroundingImg from '../src/assets/images/surroundings.jpg'
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const Home = () => {
   return (
     <div  id="home"
-          className="container px-10">
+          className="container px-10 mt-6">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
             {/* hero content */}
             <div className="flex flex-col lg:flex-row gap-5 items-center">
@@ -27,13 +30,63 @@ const Home = () => {
                 
               </div>
 
-              {/* Right Section - Image */}
+              {/* Left Section - Image */}
               <div data-aos="fade-left"
-                  data-aos-offset="200"className="mt-8 lg:mt-20">
+                   data-aos-offset="200"
+                   className="mt-0 flex flex-col">
                 <img
-                  src={backgroundImg }
+                  src={MenuImg}
                   alt="Hero Image"
-                  className="rounded-lg mx-auto mb-8 lg:ml-60 lg:mb-20 shadow-lg"
+                  className="rounded-lg mx-8 gap-x-10 sm:mx-4 lg:ml-20 lg:mb-4 shadow-lg"
+                  style={{
+                    width: '250px',
+                    height: '100%',
+                    // Adjust dimensions for lg screens
+                    '@media (min-width: 1024px)': {
+                      width: '250px',
+                      height: '700px',
+                    },
+                    '@media (max-width: 767px)': {
+                      width: '300px',
+                      height: '300px',
+                    },
+                  }}
+                />
+
+            <div data-aos="fade-left"
+                   data-aos-offset="200"
+                   className="mt-0 flex flex-col">
+                <img
+                  src={FoodItem1}
+                  alt="Hero Image"
+                  className="rounded-lg sm:mx-4 lg:ml-10 lg:mb-2 shadow-lg"
+                  style={{
+                    width: '300px',
+                    height: '100%',
+                    // Adjust dimensions for lg screens
+                    '@media (min-width: 1024px)': {
+                      width: '250px',
+                      height: '700px',
+                    },
+                    '@media (max-width: 767px)': {
+                      width: '300px',
+                      height: '300px',
+                    },
+                  }}
+                />
+                </div>
+
+                
+              </div>
+
+
+
+              <div data-aos="fade-left"
+                  data-aos-offset="200"className="mx-4">
+                <img
+                  src={backgroundImg}
+                  alt="Hero Image"
+                  className="rounded-lg mx-auto mb-8  lg:mb-20 shadow-lg"
                   style={{
                     width: '500px',
                     height: '100%',
@@ -51,11 +104,14 @@ const Home = () => {
 
                 
               </div>
+
+              
+
             </div>
           </div>
 
 
-          {/* hero counter */}
+          {/* Indicators*/}
           <div data-aos="fade-up"
             data-aos-offset="200" className="text-start mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-[50px]">
                   <div className="lg:w-1/3 md:w-full text-center">
@@ -79,7 +135,7 @@ const Home = () => {
                     <div>
                         <span className="lg:w-[100px] h-2 bg-teal-500 rounded-full block mt-[-14px]" />
                         <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">
-                      Patient Satisfaction
+                      Customer Satisfaction
                         </p>
                       </div>
                   </div>
@@ -91,13 +147,13 @@ const Home = () => {
                     <div>
                         <span className="lg:w-[100px] sm:w-[600px] h-2 bg-purple-500 rounded-full block mt-[-14px]" />
                         <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">
-                       Clinics Funtioning
+                       Food Products
                         </p>
                       </div>
                   </div>
                 </div>
 
-          {/* hero__section end       */}
+          
           
           <div data-aos="fade-up"
             data-aos-offset="200" className="container lg:py-40 sm:py-10">
@@ -107,43 +163,6 @@ const Home = () => {
             </div>
 
           </div>
-
-          <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5 pb-20 lg:mt-10">
-            <div className="flex p-4 flex-col items-center hover:cursor-pointer hover:border-2 hover:border-cyan-400 rounded-xl shadow-lg">
-              <img src={backgroundImg } className="h-60 w-60" alt="" />
-              <h1 className="text-2xl font-semibold text-center mt-4">Find a Doctor</h1>
-              <p className="text-center">Discover expert healthcare professionals to meet your medical needs.</p>
-              <FaRegArrowAltCircleRight className="m-5 h-6 w-6"/>
-            </div>
-
-            <div className="flex p-4 flex-col items-center hover:cursor-pointer hover:border-2 hover:border-cyan-400 rounded-xl shadow-lg">
-              <img src={backgroundImg } className="h-60 w-60" alt="" />
-              <h1 className="text-2xl font-semibold text-center mt-4">24hr Service</h1>
-              <p className="text-center">Access around-the-clock assistance for immediate healthcare support and emergencies.</p>
-              <FaRegArrowAltCircleRight className="m-5 h-6 w-6"/>
-            </div>
-
-            <div className="flex p-4 flex-col items-center hover:cursor-pointer hover:border-2 hover:border-cyan-400 rounded-xl shadow-lg">
-              <img src={backgroundImg } className="h-60 w-60" alt="" />
-              <h1 className="text-2xl font-semibold text-center mt-4">All under one roof</h1>
-              <p className="text-center">Experience comprehensive care with a wide range of medical services conveniently available in one location.</p>
-              <FaRegArrowAltCircleRight className="m-5 h-6 w-6"/>
-            </div>
-
-            <div className="flex p-4 flex-col items-center hover:cursor-pointer hover:border-2 hover:border-cyan-400 rounded-xl shadow-lg">
-              <img src={backgroundImg } className="h-60 w-60" alt="" />
-              <h1 className="text-2xl font-semibold text-center mt-4">High quality service</h1>
-              <p className="text-center">Receive top-notch medical care with a commitment to excellence, ensuring your well-being and satisfaction.</p>
-              <FaRegArrowAltCircleRight className="m-5 h-6 w-6"/>
-            </div>
-
-          </div>
-
-          
-
-        
-
-
         </div>
   );
 };
