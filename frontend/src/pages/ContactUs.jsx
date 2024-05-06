@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImg from '../src/assets/images/surasabg.jpg';
+import backgroundImg from '../assets/images/surasabg.jpg';
 
 const ContactUs = () => {
   return (
