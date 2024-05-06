@@ -27,7 +27,7 @@ const Home = () => {
         </div>
 
         {/* Images Section */}
-        <div className="grid grid-cols-1 gap-5 mb-20 lg:mt-[-140px]">
+        <div className="grid grid-cols-1 gap-5 mb-20 lg:mt-[-100px]">
           
           
           <div className="grid grid-cols-2 gap-1">
@@ -78,39 +78,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Indicators*/}
-      <div data-aos="fade-up" data-aos-offset="200" className="text-start mt-[30px] lg:mt-[80px] flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-[50px]">
-        <div className="lg:w-1/3 md:w-full text-center">
-          <h2 className="text-start text-[36px] py-5 leading-[56px] lg:text-[44px] lg-leading-[54px] font-[700]">2+</h2>
-          <div>
-            <span className="lg:w-[100px] h-2 bg-yellow-500 rounded-full block mt-[-14px]" />
-            <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">Years of Experience</p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/3 md:w-full text-center">
-          <h2 className="text-start text-[36px] py-5 leading-[56px] lg:text-[44px] lg-leading-[54px] font-[700]">100%</h2>
-          <div>
-            <span className="lg:w-[100px] h-2 bg-teal-500 rounded-full block mt-[-14px]" />
-            <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">Customer Satisfaction</p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/3 md:w-full text-center">
-          <h2 className="text-start text-[36px] py-5 leading-[56px] lg:text-[44px] lg-leading-[54px] font-[700]">15+</h2>
-          <div>
-            <span className="lg:w-[100px] sm:w-[600px] h-2 bg-purple-500 rounded-full block mt-[-14px]" />
-            <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">Food Products</p>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="fade-up" data-aos-offset="200" className="container lg:py-40 sm:py-10">
-        <div className="lg:w-[740px] mx-auto ">
-          <h2 className="heading text-center font-medium text-[50px]">Providing the best medical services in the country</h2>
-          <p className="pt-6 heading text-center font-medium text-gray-500 text-[20px]">World Class healthcare for all. Our healthcare system offers unmatched health care for everyone...</p>
-        </div>
-      </div>
+      
     </div>
   );
 };
