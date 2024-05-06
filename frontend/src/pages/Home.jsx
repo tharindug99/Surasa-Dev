@@ -86,7 +86,7 @@ const Home = () => {
                 <img
                   src={backgroundImg}
                   alt="Hero Image"
-                  className="rounded-lg mx-auto mb-8  lg:mb-20 shadow-lg"
+                  className="rounded-lg lg:mb-10 shadow-lg"
                   style={{
                     width: '500px',
                     height: '100%',
