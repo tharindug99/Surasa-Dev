@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div id="home" 
     className="container lg:px-10 md:px-6 sm:px-4 mx-2 ">
-      <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-5 lg:ml-20 md:ml-14 sm:ml-10 mx-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2 gap-4  md:ml-14 sm:ml-10 mx-8">
         {/* Left Section */}
         <div data-aos="fade-up" data-aos-offset="200" className="space-y-10 mt-10 lg:mt-2">
           <h1 className="text-[36px] lg:mt-24 lg:pt-12 leading-[46px] font-[700] md:text-[60px] md:leading-[70px]">
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
 
         {/* Images Section */}
-        <div className="grid grid-cols-1 gap-5 mb-20 ">
+        <div className="grid grid-cols-1 gap-5 mb-20 lg:mt-[-140px]">
           
           
           <div className="grid grid-cols-2 gap-1">
@@ -35,7 +35,7 @@ const Home = () => {
             <img
             src={FoodItem1}
             alt="Food Item Image"
-            className="rounded-lg shadow-lg 
+            className="rounded-lg shadow-lg max-h-60
             lg:h-auto lg:mt-28 lg:w-auto
             md:h-auto md:mt-20  md:w-auto
             sm:h-auto sm:mt-24 sm:w-auto
