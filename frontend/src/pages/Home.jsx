@@ -16,14 +16,15 @@ const Home = () => {
         {/* Left Section */}
         <div data-aos="fade-up" data-aos-offset="200" className="space-y-10 mt-10 lg:mt-2">
           <h1 className="text-[36px] lg:mt-24 lg:pt-12 leading-[46px] font-[700] md:text-[60px] md:leading-[70px]">
-            Welcome to Surasa!!
+            <span>Welcome</span><br/>
+            <span>to Surasa!!</span>
           </h1>
           <p className="text_para mt-10">
             "Satisfy your hunger needs, with an authentic culinary experience !!"
           </p>
           <Link to="booking" smooth={true} duration={500}>
-            <button className="lg:my-10 p-4 rounded-2xl bg-SurasaBrown text-white">
-              Book Surasa Now!
+            <button className="lg:my-8 py-4 px-10 rounded-[25px] bg-SurasaBrown text-white">
+              Book Now
             </button>
           </Link>
         </div>
