@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Welcome');
 });
+
+Route::get('/dashboard', function () {
+    return "This is Dashboard";
+});
+
+Route::get('/profile', function () {
+    return "Welcome to Your profile";
+});
+
+
