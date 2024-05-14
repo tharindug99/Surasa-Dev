@@ -26,7 +26,7 @@ function Beverages() {
         {beverageItems.map(item => (
           <div key={item.id} className="max-w-xs w-full sm:w-1/2 md:w-1/3 lg:w-1/6 flex-grow flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden m-2">
             <div className="flex justify-center items-center p-4">
-              <img className="h-32 w-32 object-cover" src={item.image} alt={item.name} />
+              <img className="h-32 w-32 object-cover rounded-lg" src={item.image} alt={item.name} />
             </div>
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{item.name}</div>
