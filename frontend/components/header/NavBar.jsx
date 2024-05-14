@@ -1,186 +1,150 @@
-import React, { useState,  useEffect } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
+// eslint-disable-next-line no-unused-vars
+import React, {useState, useEffect} from 'react';
+// eslint-disable-next-line no-unused-vars
+import {Link} from 'react-scroll';
 import logo from '../../src/assets/logos/Surasa Logo.png';
-import { GiHamburgerMenu } from "react-icons/gi";
-
+import {GiHamburgerMenu} from 'react-icons/gi';
+import './NavBar.css';
 
 function NavBar() {
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+    const toggleDropdown = () => {
+        setShowDropdown(!showDropdown);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+        window.addEventListener('scroll', handleScroll);
 
-  return (
-    <div className={`bg-NavBarBG ${isScrolled ? 'fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90' : ''}`}>
-      <nav className="flex justify-between items-center h-20">
-        {/* Logo */}
-        <div className="flex ">
-          <img className="h-[100px] w-[100px]" src={logo} alt="Surasa Logo" />
-          
-        </div>
-        {/* Navigation Links */}
-        <ul className="hidden space-x-4 lg:flex ml-24">
-          <li>
-            <Link
-              className="text-black hover:text-[#291603] cursor-pointer"
-              activeClass="active"
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="text-black hover:text-[#291603] cursor-pointer"
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="text-black hover:text-[#291603] cursor-pointer"
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Contact Us
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="text-black hover:text-[#291603] cursor-pointer"
-              activeClass="active"
-              to="register"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Register
-            </Link>
-          </li>
-        </ul>
-        {/* Register and Login Buttons */}
-        <div className="mr-10 hidden lg:flex md:flex sm:flex">
-            <button className="
-            bg-transparent      hover:bg-[#291603] 
-            text-[#F0C903]      hover:text-white
-            border-[#F0C903]    hover:border-[#291603]
-            border-2 font-semibold py-2 px-6 rounded-3xl mr-2">
-              Register
-            </button>
-            <button className="
-            bg-SurasaYellow   hover:bg-[#291603]
-            border-[#F0C903]  hover:text-white
-            text-white                  hover:border-[#291603]
-            border-2 font-semibold py-2 px-6 rounded-3xl mr-2">
-              Login
-            </button>
-            
-        </div>
-        <div className='lg:hidden md:hidden sm:hidden mx-10'>
-              <GiHamburgerMenu 
-                size={40}
-                onClick={toggleDropdown}/> 
-                {showDropdown && (
-        <div className="absolute top-16 right-0 bg-white shadow-md mx-4 p-16 px-28">
-          {/* Dropdown items */}
-          <ul className="flex flex-col space-y-2">
-            <li>
-              <Link
-                className="text-gray-800 hover:text-gray-900"
-                activeClass="active"
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-gray-800 hover:text-gray-900"
-                activeClass="active"
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-            <Link
-              className="text-black hover:text-gray-700 cursor-pointer"
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="text-black hover:text-gray-700 cursor-pointer"
-              activeClass="active"
-              to="register"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Register
-            </Link>
-          </li>
-          </ul>
-        </div> )}
-        </div>
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
-      </nav>
-    </div>
-  );
+    return (
+        <div className={`bg-NavBarBG ${isScrolled ? 'fixed top-0 left-0 w-full z-50 bg-white ' : ''}`}>
+            <nav className="flex justify-between items-center h-20">
+                {/* Logo */}
+                <div className="flex">
+                    <img className="h-[5rem] w-[5rem]" src={logo} alt="Surasa Logo"/>
+                </div>
+                {/* Navigation Links */}
+                <ul className="hidden lg:flex ml-24 space-x-4">
+                    <li>
+                        <Link
+                            className="nav-link"
+                            activeClass="active"
+                            to="slider"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className="nav-link"
+                            activeClass="active"
+                            to="aboutus"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >
+                            About Us
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className="nav-link"
+                            activeClass="active"
+                            to="contact"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >
+                            Contact Us
+                        </Link>
+                    </li>
+                </ul>
+                {/* Register and Login Buttons */}
+
+                <div className="mr-10 flex">
+                    <button className="register-button">Register</button>
+                    <button className="login-button">Login</button>
+                </div>
+                {/* Hamburger Menu for Small Screens */}
+                <div className="lg:hidden">
+                    <GiHamburgerMenu
+                        size={40}
+                        onClick={toggleDropdown}
+                    />
+                    {/* Dropdown menu for small screens */}
+                    {showDropdown && (
+                        <div className="absolute top-16 right-0 bg-white shadow-md mx-4 p-16 px-28">
+
+                            <ul className="flex flex-col space-y-2">
+                                {/* Dropdown items with hover effect */}
+                                <li>
+                                    <Link
+                                        className="dropdown-link"
+                                        activeClass="active"
+                                        to="slider"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={-70}
+                                        duration={500}
+                                    >
+                                        Home
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        className="dropdown-link"
+                                        activeClass="active"
+                                        to="aboutus"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={-70}
+                                        duration={500}
+                                    >
+                                        About Us
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        className="dropdown-link"
+                                        activeClass="active"
+                                        to="contact"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={-70}
+                                        duration={500}
+                                    >
+                                        Contact Us
+                                    </Link>
+                                </li>
+
+                            </ul>
+                        </div>
+                    )}
+                </div>
+            </nav>
+        </div>
+    );
 }
 
 export default NavBar;
