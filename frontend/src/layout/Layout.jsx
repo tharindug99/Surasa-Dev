@@ -14,8 +14,7 @@ function Layout() {
   return (
     <>
     <NavBar/>
-      {/*<Home />*/}
-      <ImageGrid></ImageGrid>
+      <ImageGrid/>
       <Tabs/>
       <AboutUs />
       <Booking/>

@@ -12,9 +12,9 @@ function Tabs() {
           <h2 className="heading text-center font-medium text-[50px]">Today's Menu</h2>
         </div>
       </div>
-      <div className="flex mb-4">
+      <div className="flex mb-4 justify-center">
         <button
-          className={`py-2 px-4 focus:outline-none ${
+          className={`py-2 px-4 mx-2 focus:outline-none ${
             activeTab === 'Food'
               ? 'bg-yellow-400 rounded-md font-semibold text-brown-600'
               : 'text-gray-500 hover:text-yellow-400'
@@ -24,7 +24,7 @@ function Tabs() {
           Food
         </button>
         <button
-          className={`py-2 px-4 focus:outline-none ${
+          className={`py-2 px-4 mx-2 focus:outline-none ${
             activeTab === 'Beverages'
               ? 'bg-yellow-400 rounded-md font-semibold text-brown-600'
               : 'text-gray-500 hover:text-yellow-400'
@@ -37,6 +37,11 @@ function Tabs() {
       <div className="mt-4">
         {activeTab === 'Food' && <Food />}
         {activeTab === 'Beverages' && <Beverages />}
+        <div className="flex justify-center mt-8">
+          <button className="px-6 py-3 mb-20 bg-SurasaBrown text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-75">
+            Order Now !!
+          </button>
+        </div>
       </div>
     </div>
   );

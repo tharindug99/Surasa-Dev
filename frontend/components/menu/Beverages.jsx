@@ -6,7 +6,7 @@ const beverageItems = [
     name: 'Iced Coffee',
     description: 'Chilled coffee with a splash of milk and a touch of sweetness.',
     price: '$3.49',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTumoMickQs_jcLYaMyiQhNG4FsxB2VeluN3XtCQhLvqg&s',
+    image: 'https://www.cookingclassy.com/wp-content/uploads/2022/07/iced-coffee-05.jpg',
     ratings: 4.6
   },
   {
@@ -14,7 +14,23 @@ const beverageItems = [
     name: 'Lemonade',
     description: 'Freshly squeezed lemons with a hint of mint.',
     price: '$2.99',
-    image: 'images/lemonade.jpg',
+    image: 'https://i0.wp.com/thejoyfilledkitchen.com/wp-content/uploads/2021/04/Lemonade-2-2.jpg?resize=740%2C792&ssl=1',
+    ratings: 4.7
+  },
+  {
+    id: 3,
+    name: 'Faluda',
+    description: 'Freshly squeezed lemons with a hint of mint.',
+    price: '$2.99',
+    image: 'https://www.theflavorbender.com/wp-content/uploads/2015/05/Falooda-Social-Media-3329.jpg',
+    ratings: 4.7
+  },
+  {
+    id: 4,
+    name: 'Cocktail Drink',
+    description: 'Freshly squeezed lemons with a hint of mint.',
+    price: '$2.99',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUeIcMV2pbUcdoPQAcUic3CQAxqvqWyqtL2ruk56Fgzg&s',
     ratings: 4.7
   }
 ];

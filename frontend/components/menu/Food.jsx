@@ -15,7 +15,7 @@ const foodItems = [
     name: 'Caesar Salad',
     description: 'Crisp romaine lettuce with Caesar dressing, croutons, and Parmesan cheese.',
     price: '$5.99',
-    image: 'images/caesar_salad.jpg',
+    image: 'https://www.seriouseats.com/thmb/Fi_FEyVa3_-_uzfXh6OdLrzal2M=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/the-best-caesar-salad-recipe-06-40e70f549ba2489db09355abd62f79a9.jpg',
     ratings: 4.3
   },
   {
@@ -23,15 +23,15 @@ const foodItems = [
     name: 'Pasta Carbonara',
     description: 'Classic Italian pasta with eggs, cheese, pancetta, and pepper.',
     price: '$10.99',
-    image: 'images/pasta_carbonara.jpg',
+    image: 'https://www.allrecipes.com/thmb/a_0W8yk_LLCtH-VPqg2uLD9I5Pk=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157.jpg',
     ratings: 4.7
   },
   {
     id: 4,
-    name: 'Pasta Carbonara',
+    name: 'Mushroom Burger',
     description: 'Classic Italian pasta with eggs, cheese, pancetta, and pepper.',
     price: '$10.99',
-    image: 'images/pasta_carbonara.jpg',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkJv-PoBgECzVVvK-cxL8PiaHpmJmsIrJujGd06xCA1Q&s',
     ratings: 4.7
   },
   
@@ -44,7 +44,7 @@ function Food() {
         {foodItems.map(item => (
           <div key={item.id} className="max-w-xs w-full sm:w-1/2 md:w-1/3 lg:w-1/6 flex-grow flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden m-2">
             <div className="flex justify-center items-center p-4">
-              <img className="h-32 w-32 object-cover" src={item.image} alt={item.name} />
+              <img className="h-32 w-32 object-cover rounded-lg" src={item.image} alt={item.name} />
             </div>
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{item.name}</div>

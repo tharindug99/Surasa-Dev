@@ -1,15 +1,16 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useRef } from 'react';
+import Lottie from 'lottie-react'; 
 import PropTypes from "prop-types";
 import {useSpring, animated} from "react-spring";
 import {Link} from "react-scroll";
+import foodAnim1 from '../../src/assets/animations/foodAnimation.json';
 
-function ImageGrid({images}) {
+function ImageGrid({ images }) {
     // Define animation properties
     const props = useSpring({
-        from: {opacity: 0.5, transform: "translateX(100%)"},
-        to: {opacity: 1, transform: "translateX(0)"},
-        config: {duration: 800},
+        from: { opacity: 0.5, transform: "translateX(100%)" },
+        to: { opacity: 1, transform: "translateX(0)" },
+        config: { duration: 800 },
     });
 
     return (
@@ -80,6 +81,8 @@ ImageGrid.propTypes = {
 };
 
 function MyComponent() {
+
+    const foodAnimRef = useRef(null);
     const images = [
         {
             src: "../../src/assets/images/FoodItem1.jpg",
@@ -100,35 +103,43 @@ function MyComponent() {
     ];
 
     return (
-        <section className="pl-40 pr-40 pt-10 pb-40">
+        <section className="lg:pl-40 lg:pt-2
+                            md:pl-10
+                            sm:pl-40
+                            pl-8        pr-40 pt-10 pb-40 ">
             <div className="flex flex-col">
-                <div className="w-full max-md:max-w-full">
+                <div className="w-full ">
                     <div className="flex gap-2 max-md:flex-col max-md:gap-0">
-                        <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full ">
-                            <div className="flex flex-col px-5 mt-20 max-md:mt-10 max-md:max-w-full mb-20 ">
-                                <h1 className="text-5xl font-bold text-black leading-[55px] max-md:max-w-full">
+                        <div className="lg:w-6/12
+                                        flex flex-col  max-md:ml-0 max-md:w-full ">
+                            <div className="lg:mt-10
+                                            flex flex-col px-5  lg:w-4/5 max-md:mt-10 max-md:max-w-full mb-10 ">
+                                <h1 className="text-5xl font-bold text-black leading-[55px] max-md:max-w-full max-md:text-center">
                                     Welcome to <br/> Surasa
-                                </h1>
-                                <p className="mt-10 text-xl text-zinc-950 max-md:mt-10 max-md:max-w-full">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolore eos fugiat
-                                    id itaque maiores minus odit quisquam ratione voluptas. Aut inventore, maiores nobis
-                                    non nulla odit ratione voluptatem voluptatibus. Autem magnam odit reiciendis?
-                                    Commodi
-                                    exercitationem hic iusto, maiores maxime officia quibusdam voluptatum? Accusantium
-                                    at delectus distinctio eligendi facere incidunt laboriosam, porro recusandae
-                                    repellendus sapiente sint, velit voluptates voluptatibus. Ad laudantium magnam
-                                    molestiae nulla
-                                    quidem. Amet aperiam at consectetur cupiditate eius eveniet fugiat iste laudantium
-                                    molestiae, necessitatibus neque nihil omnis optio provident quia, quos rerum?
-                                    Deleniti ea iste quas quasi quia reiciendis repellendus vitae voluptatibus. Alias
-                                    architecto
-                                    culpa debitis distinctio doloribus, harum illum, incidunt libero magnam modi
-                                    pariatur perferendis quidem
-                                </p>
+                                    </h1>
+                                        <div className="h-12 w-12 my-2 self-center">
+                                            <Lottie 
+                                                lottieRef={foodAnimRef}
+                                                animationData={foodAnim1}
+                                                onComplete={() => {
+                                                foodAnimRef.current?.stop
+                                                }}
+                                                loop={false}
+                                            />
+                                        </div>
+                                        <p className="mt-4 text-xl text-zinc-950 max-md:mt-10 max-md:w-full max-md:text-center">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolore eos fugiat
+                                            id itaque maiores minus odit quisquam ratione voluptas.
+                                        </p>
+
                             </div>
                             <Link to="booking" smooth={true} duration={500}>
                                 <button
-                                    className="justify-center self-start px-10 py-4 rounded-[25px]  leading-8 bg-SurasaBrown text-white max-md:px-5 ml-5 hover:bg-yellow-300 hover:text-white border-yellow-500 hover:border-yellow-500">
+                                    className="
+                                    lg:px-8 lg:py-3 lg:ml-5 lg:rounded-[20px]
+                                    md:px-8 md:py-3 md:ml-5
+                                    sm:ml-14 
+                                    justify-center self-start  rounded-[10px] leading-8 bg-SurasaBrown text-white max-md:px-5  hover:bg-yellow-300 hover:text-white border-yellow-500 hover:border-yellow-500">
                                     Book Now
                                 </button>
                             </Link>
@@ -139,10 +150,9 @@ function MyComponent() {
                         </div>
                     </div>
                 </div>
-
-
             </div>
-        </section>);
+        </section>
+    );
 }
 
 export default MyComponent;
