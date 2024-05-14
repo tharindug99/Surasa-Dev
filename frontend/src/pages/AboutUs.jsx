@@ -1,57 +1,76 @@
-import React from 'react'
+// eslint-disable-next-line no-unused-vars
+import React, {useEffect, useRef, useState} from 'react';
+import {useSpring, animated} from 'react-spring';
+import aboutBgImage from "../assets/images/Aboutbg.png";
+
 
 function AboutUs() {
-  return (
-    <div id="about" className="container text-4xl text-black">
+    const [isVisible, setIsVisible] = useState(false);
+    const props = useSpring({
+        opacity: isVisible ? 1 : 0,
+        from: {opacity: 0},
+        config: {duration: 1000},
+    });
 
-      <div data-aos="fade-up" data-aos-offset="200" className="container lg:py-5 sm:py-10">
-        <div className="lg:w-[740px] mx-auto ">
-          <h2 className="heading text-center font-medium text-[50px]">About Us</h2>
-          <p className="pt-6 heading text-center font-medium text-gray-500 text-[20px]">Surasa is ............... Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, nemo. Temporibus numquam atque, quisquam eum maiores fugit voluptatibus inventore molestiae maxime? Esse facilis similique maxime praesentium repellat, dolorem saepe fugiat?</p>
-        </div>
-      </div>
+    const aboutRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!aboutRef.current) return;
+
+            const top = aboutRef.current.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (top < windowHeight * 0.75) {
+                setIsVisible(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
+        <section
+            ref={aboutRef}
+            className="flex overflow-hidden relative flex-col justify-center items-end px-16 py-20 text-white min-h-[845px] max-md:px-5 mx-10  mb-20 rounded-[50px] "
+        >
+            <img
 
 
-      {/* Indicators*/}
-      <div data-aos="fade-up" 
-           data-aos-offset="200" 
-           className="text-start mt-[30px]  flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-[50px] lg:mx-28">
-        <div className="lg:w-1/4 md:w-full text-center">
-          <h2 className="text-start text-[36px] py-5 leading-[56px] lg:text-[44px] lg-leading-[54px] font-[700]">2+</h2>
-          <div>
-            <span className="lg:w-[100px] h-2 bg-yellow-500 rounded-full block mt-[-14px]" />
-            <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">Years of Experience</p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/4 md:w-full text-center">
-          <h2 className="text-start text-[36px] py-5 leading-[56px] lg:text-[44px] lg-leading-[54px] font-[700]">100%</h2>
-          <div>
-            <span className="lg:w-[100px] h-2 bg-teal-500 rounded-full block mt-[-14px]" />
-            <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">Customer Satisfaction</p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/4 md:w-full text-center">
-          <h2 className="text-start text-[36px] py-5 leading-[56px] lg:text-[44px] lg-leading-[54px] font-[700]">15+</h2>
-          <div>
-            <span className="lg:w-[100px] sm:w-[600px] h-2 bg-purple-500 rounded-full block mt-[-14px]" />
-            <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">Food Products</p>
-          </div>
-        </div>
-
-        <div className="lg:w-1/4 md:w-full text-center">
-          <h2 className="text-start text-[36px] py-5 leading-[56px] lg:text-[44px] lg-leading-[54px] font-[700]">2+</h2>
-          <div>
-            <span className="lg:w-[100px] h-2 bg-yellow-500 rounded-full block mt-[-14px]" />
-            <p className="text-start py-5 text-[40px] font-bold xs:text-[20px]">Years of Experience</p>
-          </div>
-        </div>
-      </div>
-
-      
-    </div>
-  )
+                src={aboutBgImage}
+                alt="Background image"
+                className="object-cover absolute inset-0 size-full"
+            />
+            <animated.div
+                style={props}
+                className="flex relative justify-center items-center px-16 py-16 mt-9 max-w-full bg-stone-900 bg-opacity-40 rounded-[50px] w-[873px] max-md:px-5"
+            >
+                <div className="flex flex-col mb-7 max-w-full w-[585px]">
+                    <h2 className="self-center text-6xl max-md:text-4xl">About</h2>
+                    <p className="mt-16 text-base max-md:mt-10 max-md:max-w-full">
+                        Welcome to Surasa website, the innovative restaurant run by talented undergraduates from the
+                        Faculty of Agricultural Sciences at Sabaragamuwa University of Sri Lanka.
+                        <br/>
+                        <br/>
+                        Our mission is to provide students with delicious and nutritious meals while delivering
+                        exceptional value. Through our unique approach, we prioritize the importance of good nutrition
+                        and aim to promote healthy eating habits among our student community. Surasa is also the perfect
+                        venue for your special occasions! Whether it's a birthday party or a celebration, our dedicated
+                        team will ensure a memorable experience. In addition to our regular offerings, we specialize in
+                        crafting personalized menus to suit the unique needs of your event. Our team of passionate chefs
+                        and attentive staff will go above and beyond to make your special occasion truly remarkable.
+                        <br/>
+                        <br/>
+                        On our website, you will find a wide range of mouthwatering dishes crafted from fresh, locally
+                        sourced ingredients. Join us on this culinary journey where great taste meets affordability.
+                    </p>
+                </div>
+            </animated.div>
+        </section>
+    );
 }
 
-export default AboutUs
+export default AboutUs;

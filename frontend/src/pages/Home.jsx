@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
-import Lottie from 'lottie-react'; 
-import foodAnim1 from '../assets/animations/foodAnimation.json';
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
+import backgroundImg from '../assets/images/surasabg.jpg';
+import MenuImg from '../assets/images/MenuImg.jpg';
 import FoodItem1 from '../assets/images/FoodItem1.jpg';
 import FoodItem2 from '../assets/images/fooditem2.jpg';
 import FoodItem3 from '../assets/images/fooditem5.jpg';

@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "jquery": "^3.7.1",
+<<<<<<< HEAD
     "lottie-react": "^2.4.0",
+=======
+    "prop-types": "^15.8.1",
+>>>>>>> d009b51255bc3a602c1b9f38728a466c53375c1f
     "react": "^18.2.0",
     "react-big-calendar": "^1.12.1",
     "react-calendar": "^5.0.0",
@@ -19,9 +23,11 @@
     "react-icons": "^5.2.0",
     "react-router-dom": "^6.23.0",
     "react-scroll": "^1.9.0",
+    "react-spring": "^9.7.3",
     "react-toastify": "^10.0.5"
   },
   "devDependencies": {
+    "@babel/plugin-transform-object-rest-spread": "^7.24.5",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react-swc": "^3.5.0",
