@@ -7,6 +7,7 @@ import FoodItem3 from '../assets/images/fooditem5.jpg';
 import FoodItem4 from '../assets/images/pasta.jpg';
 import { Link } from 'react-scroll';
 
+
 const Home = () => {
   const foodAnimRef = useRef(null);
 

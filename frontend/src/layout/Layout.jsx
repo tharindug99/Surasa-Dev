@@ -6,12 +6,14 @@ import AboutUs from '../pages/AboutUs'
 import Booking from '../pages/Booking'
 import ContactUs from '../pages/ContactUs'
 import Register from '../pages/Register'
+import Tabs from '../../components/menu/Tabs'
 
 function Layout() {
   return (
     <>
     <NavBar/>
-    <Home />
+      <Home />
+      <Tabs/>
       <AboutUs />
       <Booking/>
       <ContactUs />
