@@ -1,18 +1,24 @@
 import React from 'react'
+import { useState } from 'react'
 import Header from '../../admin/components/Header'
 import SideBar from '../../admin/components/SideBar'
 import Home from '../../admin/pages/Home'
+import './styles.css'
 
-const Dashboard = () => {
+const Dasboard = () => {
+
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
   return (
-    <div className="flex flex-col h-screen bg-yellow-100">
-      <Header className="flex-none" />
-      <div className="flex flex-1">
-        <SideBar className="flex-1 w-40" />
-        <Home className="flex-4" />
-      </div>
-    </div>
+    <div className='grid-container'>
+    <Header OpenSidebar={OpenSidebar}/>
+    <SideBar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
+    <Home />
+  </div>
   )
 }
 
-export default Dashboard
+export default Dasboard
