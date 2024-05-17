@@ -32,8 +32,8 @@ function NavBar() {
     }, []);
 
     return (
-        <div className={`bg-NavBarBG ${isScrolled ? 'fixed top-0 left-0 w-full z-50 bg-white ' : ''}`}>
-            <nav className="flex justify-between items-center h-20">
+        <div className={`bg-NavBarBG ${isScrolled ? 'fixed top-0 left-0 w-full z-50 bg-white ' : ' top-0 left-0 w-full'}`}>
+            <nav className="flex justify-between items-center w-full h-20">
                 {/* Logo */}
                 <div className="flex">
                     <img className="h-[5rem] w-[5rem]" src={logo} alt="Surasa Logo"/>
