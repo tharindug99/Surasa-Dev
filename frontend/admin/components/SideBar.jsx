@@ -3,13 +3,14 @@ import {
   BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill
 } from 'react-icons/bs'
+import SurasaLogo from '../../src/assets/logos/Surasa Logo.png'
 
 function SideBar({ openSidebarToggle, OpenSidebar, setCurrentScreen }) {
   return (
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
         <div className='sidebar-title'>
-            <div className='sidebar-brand flex'>
-                <BsCart3 className='icon_header' /> SHOP
+            <div className='flex'>
+                <img className="rounded-lg max-w-3" src={SurasaLogo}/>
             </div>
             <span className='icon close_icon' onClick={OpenSidebar}>X</span>
         </div>
