@@ -1,9 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #1d2634;
-    color: #9e9ea4;
-    font-family: 'Montserrat', sans-serif;
+    
+    
+    
   }
   
   .icon {
@@ -116,6 +116,12 @@ body {
   
   
   /* Main  */  
+  .main-content {
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 2;
+    padding: 1rem;
+    /* background-color: #000000;  */
+  }
   .main-container {
     grid-area: main;
     overflow-y: auto;
