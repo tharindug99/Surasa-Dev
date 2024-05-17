@@ -1,6 +1,4 @@
-// eslint-disable-next-line no-unused-vars
 import React, {useState, useEffect} from 'react';
-// eslint-disable-next-line no-unused-vars
 import {Link} from 'react-scroll';
 import logo from '../../src/assets/logos/Surasa Logo.png';
 import {GiHamburgerMenu} from 'react-icons/gi';
@@ -32,8 +30,8 @@ function NavBar() {
     }, []);
 
     return (
-        <div className={`bg-NavBarBG ${isScrolled ? 'fixed top-0 left-0 w-full z-50 bg-white ' : ' top-0 left-0 w-full'}`}>
-            <nav className="flex justify-between items-center w-full h-20">
+        <div className={`bg-NavBarBG ${isScrolled ? 'fixed top-0 left-0 w-full z-50 bg-white' : 'top-0 left-0 w-full'}`}>
+            <nav className="flex justify-between items-center w-full h-20 px-4 md:px-8">
                 {/* Logo */}
                 <div className="flex">
                     <img className="h-[5rem] w-[5rem]" src={logo} alt="Surasa Logo"/>
@@ -81,8 +79,7 @@ function NavBar() {
                     </li>
                 </ul>
                 {/* Register and Login Buttons */}
-
-                <div className="mr-10 flex">
+                <div className="flex">
                     <button className="register-button">Register</button>
                     <button className="login-button">Login</button>
                 </div>
@@ -94,9 +91,8 @@ function NavBar() {
                     />
                     {/* Dropdown menu for small screens */}
                     {showDropdown && (
-                        <div className="absolute top-16 right-0 bg-white shadow-md mx-4 p-16 px-28">
-
-                            <ul className="flex flex-col space-y-2">
+                        <div className="absolute top-16 right-0 bg-white shadow-md p-6 w-full">
+                            <ul className="flex flex-col space-y-2 items-center">
                                 {/* Dropdown items with hover effect */}
                                 <li>
                                     <Link
@@ -137,7 +133,6 @@ function NavBar() {
                                         Contact Us
                                     </Link>
                                 </li>
-
                             </ul>
                         </div>
                     )}

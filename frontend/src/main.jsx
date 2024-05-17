@@ -17,7 +17,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         pauseOnHover={false}
       />
       <Routers />
-      
     </BrowserRouter> 
   </React.StrictMode>,
 )

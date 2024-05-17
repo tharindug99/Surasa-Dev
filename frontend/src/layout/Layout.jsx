@@ -10,16 +10,18 @@ import Tabs from '../../components/menu/Tabs';
 
 function Layout() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center">
+    <>
       <NavBar />
       <ImageGrid />
-      <Tabs />
+        <div className="flex flex-col items-center justify-center min-h-screen text-center">
+           <Tabs/>
+        </div>   
       <AboutUs />
       <Booking />
       <ContactUs />
       <Register />
       <Footer />
-    </div>
+    </>
   );
 }
 

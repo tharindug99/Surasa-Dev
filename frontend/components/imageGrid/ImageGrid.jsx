@@ -93,17 +93,17 @@ function MyComponent() {
             alt: "Image 2",
         },
         {
-            src: "../../src/assets/images/FoodItem3.jpg",
+            src: "../../src/assets/images/foodItem5.jpg",
             alt: "Image 3",
         },
         {
-            src: "../../src/assets/images/FoodItem5.jpg",
-            alt: "Image 4",
+            src: "../../src/assets/images/pasta.jpg",
+            alt: "pasta",
         },
     ];
 
     return (
-        <section className="lg:pl-40 lg:pt-2
+        <section className="lg:pl-40 lg:pt-2 
                             md:pl-10
                             sm:pl-40
                             pl-8        pr-40 pt-10 pb-40 ">

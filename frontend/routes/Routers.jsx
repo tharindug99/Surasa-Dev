@@ -1,6 +1,6 @@
 import React from 'react'
 import {  Routes, Route } from 'react-router-dom';
-import Dashboard from '../admin/pages/Dashboard';
+import Dashboard from '../src/pages/Dasboard';
 import App from '../src/App';
 import Order from '../src/pages/Order';
 
@@ -9,7 +9,7 @@ function Routers() {
     <Routes>
       <Route path="/" element={<App/>}></Route>
       <Route path="/order" element={<Order/>}></Route>
-      <Route path="/admin" element={<Dashboard/>}></Route>
+      <Route path="/dashboard" element={<Dashboard/>}></Route>
     </Routes>
   )
 }

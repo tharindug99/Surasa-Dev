@@ -14,6 +14,10 @@ export default {
         SurasaYellow:'#F0C903',
         SurasaBrown: '#291603'
       },
+      fontSize: {
+        'body-lg': '3rem',
+        'body': '.875rem',
+      }
     },
   },
   plugins: [],
