@@ -9,11 +9,8 @@ function DashBoardHeader({ OpenSidebar }) {
       </div>
       <div className='hidden md:flex md:items-center md:justify-between md:w-full'>
         
-        <div className='flex items-center'>
-          <BsFillBellFill className='text-xl mr-4' />
-          <BsFillEnvelopeFill className='text-xl mr-4' />
-          <BsPersonCircle className='text-xl mr-4' />
-          <span className='text-lg font-medium'>Welcome back, User</span>
+        <div className='flex text-right'>
+          <span className='text-lg font-medium text-right'>Welcome back, User</span>
         </div>
       </div>
     </header>

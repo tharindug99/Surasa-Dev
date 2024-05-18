@@ -3,14 +3,15 @@ import {
   BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill,
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill
 } from 'react-icons/bs';
+import logo from '../../../assets/logos/Surasa Logo.png'
+import Component from '../components/DashboardHome/DailyMenuItems';
 
 function LeftNavBar({ openSidebarToggle, OpenSidebar, setCurrentScreen }) {
   return (
     <aside className={`h-full bg-gray-800 overflow-y-auto transition-all duration-500 ${openSidebarToggle ? 'absolute z-20 w-64' : 'hidden md:block md:w-64'}`}>
-      <div className='flex justify-between items-center p-4 mb-8'>
-        <div className='flex items-center text-white'>
-          <BsCart3 className='text-2xl mr-2' /> 
-          <span className='font-bold text-lg'>SHOP</span>
+      <div className='flex justify-between items-center p-4 '>
+        <div className='flex items-center  text-white'>
+          <img className='h-20 w-20 rounded-lg' src={logo}/>
         </div>
         <span className='text-red-500 text-lg cursor-pointer md:hidden' onClick={OpenSidebar}>X</span>
       </div>
@@ -36,14 +37,19 @@ function LeftNavBar({ openSidebarToggle, OpenSidebar, setCurrentScreen }) {
             <BsPeopleFill className='text-xl mr-3' /> Orders
           </a>
         </li>
-        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('Inventory')}>
+        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('MenuItems')}>
           <a href="#" className='flex items-center text-white'>
-            <BsListCheck className='text-xl mr-3' /> Inventory
+            <BsListCheck className='text-xl mr-3' /> MenuItems
           </a>
         </li>
-        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('Reports')}>
+        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('ContactMsgs')}>
           <a href="#" className='flex items-center text-white'>
-            <BsMenuButtonWideFill className='text-xl mr-3' /> Reports
+            <BsMenuButtonWideFill className='text-xl mr-3' /> Messages
+          </a>
+        </li>
+        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('ReviewApproval')}>
+          <a href="#" className='flex items-center text-white'>
+            <BsMenuButtonWideFill className='text-xl mr-3' /> Review Approval
           </a>
         </li>
         <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('SignOut')}>

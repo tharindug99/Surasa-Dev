@@ -5,8 +5,9 @@ import DashboardHome from './DashboardHome';
 import CustomerInfo from './CustomerInfo';
 import BookingRequests from './BookingRequests';
 import DeliveryOrders from './DeliveryOrders';
-import InventoryScreen from './Inventory';
-import ReportsScreen from './Reports';
+import MenuItems from './MenuItems';
+import ContactMsgs from './ContactMsgs';
+import ReviewApproval from './ReviewApproval';
 // import SignOutScreen from '../screens/SignOutScreen';
 
 function DashboardLayout() {
@@ -27,10 +28,12 @@ function DashboardLayout() {
         return <BookingRequests />;
       case 'Orders':
         return <DeliveryOrders/>;
-      case 'Inventory':
-        return <InventoryScreen />;
-      case 'Reports':
-        return <ReportsScreen />;
+      case 'MenuItems':
+        return <MenuItems />;
+      case 'ContactMsgs':
+        return <ContactMsgs />;
+      case 'ReviewApproval':
+        return <ReviewApproval />;
       case 'SignOut':
         return <SignOutScreen />;
       default:
