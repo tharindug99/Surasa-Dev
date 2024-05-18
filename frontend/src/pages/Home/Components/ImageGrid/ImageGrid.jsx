@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useRef } from 'react';
 import Lottie from 'lottie-react'; 
 import PropTypes from "prop-types";
 import {useSpring, animated} from "react-spring";
 import {Link} from "react-scroll";
-import foodAnim1 from '../../src/assets/animations/foodAnimation.json';
+import foodAnim1 from '../../../../assets/animations/foodAnimation.json';
 
 function ImageGrid({ images }) {
     // Define animation properties

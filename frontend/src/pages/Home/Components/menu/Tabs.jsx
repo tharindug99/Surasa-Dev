@@ -1,7 +1,8 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Food from './Food';
-import Beverages from './Beverages';
+import Food from './Food.jsx';
+import Beverages from './Beverages.jsx';
 
 function Tabs() {
   const [activeTab, setActiveTab] = useState('Food');

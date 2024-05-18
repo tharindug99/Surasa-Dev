@@ -1,5 +1,9 @@
+//Daily Updates
+
+
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import Toaster from '../../components/toaster/Toaster';
+import Toaster from '../Home/Components/Toaster/Toaster.jsx';
 
 const foodItems = [
     {

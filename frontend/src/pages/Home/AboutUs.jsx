@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, {useEffect, useRef, useState} from 'react';
 import {useSpring, animated} from 'react-spring';
-import aboutBgImage from "../assets/images/Aboutbg.png";
+import aboutBgImage from "../../assets/images/Aboutbg.png";
 
 
 function AboutUs() {
