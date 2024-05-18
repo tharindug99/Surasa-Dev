@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useRef } from 'react';
 import Lottie from 'lottie-react'; 
-import foodAnim1 from '../assets/animations/foodAnimation.json';
-import FoodItem1 from '../assets/images/FoodItem1.jpg';
-import FoodItem2 from '../assets/images/fooditem2.jpg';
-import FoodItem3 from '../assets/images/fooditem5.jpg';
-import FoodItem4 from '../assets/images/pasta.jpg';
+import foodAnim1 from '../../assets/animations/foodAnimation.json';
+import FoodItem1 from '../../assets/images/FoodItem1.jpg';
+import FoodItem2 from '../../assets/images/fooditem2.jpg';
+import FoodItem3 from '../../assets/images/fooditem5.jpg';
+import FoodItem4 from '../../assets/images/pasta.jpg';
 import { Link } from 'react-scroll';
 
 

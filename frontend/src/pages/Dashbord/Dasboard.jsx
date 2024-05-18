@@ -1,11 +1,12 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
-import Header from '../../admin/components/Header'
-import SideBar from '../../admin/components/SideBar'
-import Home from '../../admin/pages/Home'
-import Products from '../../admin/pages/Products'
-import BookingRequests from '../../admin/pages/BookingRequests'
-import Customers from '../../admin/pages/Customers'
-import './styles.css'
+import Header from '../../../admin/components/Header.jsx'
+import SideBar from '../../../admin/components/SideBar.jsx'
+import Home from '../../../admin/pages/Home.jsx'
+import Products from '../../../admin/pages/Products.jsx'
+import BookingRequests from '../../../admin/pages/BookingRequests.jsx'
+import Customers from '../../../admin/pages/Customers.jsx'
+import '../styles.css'
 
 const Dashboard = () => {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false)

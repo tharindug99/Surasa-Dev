@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
-import backgroundImg from '../assets/images/surasabg.jpg';
+import backgroundImg from '../../assets/images/surasabg.jpg';
 
 const ContactUs = () => {
   return (
