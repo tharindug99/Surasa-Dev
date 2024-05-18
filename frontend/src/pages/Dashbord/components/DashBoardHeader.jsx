@@ -3,7 +3,7 @@ import { BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsSearch, BsJustify
 
 function DashBoardHeader({ OpenSidebar }) {
   return (
-    <header className='flex items-center justify-between h-12 px-4 shadow-md w-full'>
+    <header className='flex items-center justify-between h-12 px-4 shadow-md w-full '>
       <div className='flex md:hidden'>
         <BsJustify className='text-xl cursor-pointer' onClick={OpenSidebar} />
       </div>

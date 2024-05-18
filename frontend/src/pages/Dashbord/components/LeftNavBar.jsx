@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import {
   BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill,
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill
-} from 'react-icons/bs'
+} from 'react-icons/bs';
 
 function LeftNavBar({ openSidebarToggle, OpenSidebar, setCurrentScreen }) {
   return (
@@ -21,9 +21,9 @@ function LeftNavBar({ openSidebarToggle, OpenSidebar, setCurrentScreen }) {
             <BsGrid1X2Fill className='text-xl mr-3' /> Home
           </a>
         </li>
-        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('Products')}>
+        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('Customer Info')}>
           <a href="#" className='flex items-center text-white'>
-            <BsFillArchiveFill className='text-xl mr-3' /> Products
+            <BsFillArchiveFill className='text-xl mr-3' /> Customer Info
           </a>
         </li>
         <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('BookingRequests')}>
@@ -31,9 +31,9 @@ function LeftNavBar({ openSidebarToggle, OpenSidebar, setCurrentScreen }) {
             <BsFillGrid3X3GapFill className='text-xl mr-3' /> Booking Requests
           </a>
         </li>
-        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('Customers')}>
+        <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('Orders')}>
           <a href="#" className='flex items-center text-white'>
-            <BsPeopleFill className='text-xl mr-3' /> Customers
+            <BsPeopleFill className='text-xl mr-3' /> Orders
           </a>
         </li>
         <li className='p-4 hover:bg-gray-700 cursor-pointer' onClick={() => setCurrentScreen('Inventory')}>
@@ -53,7 +53,7 @@ function LeftNavBar({ openSidebarToggle, OpenSidebar, setCurrentScreen }) {
         </li>
       </ul>
     </aside>
-  )
+  );
 }
 
-export default LeftNavBar
+export default LeftNavBar;
