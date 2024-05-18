@@ -1,6 +1,9 @@
 body {
     margin: 0;
     padding: 0;
+    
+    
+    
   }
   
   .icon {
@@ -11,8 +14,7 @@ body {
   .icon_header {
     vertical-align: middle;
     line-height: 1px;
-    font-size: 10px;
-    height:4%
+    font-size: 26px;
   }
   .icon, .icon_header {
     margin-right: 5px;
@@ -59,20 +61,14 @@ body {
     overflow-y: auto;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
-    
   }
   
   .sidebar-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: auto; 
-    width: 40%; 
-    margin-left: 30%;
-    margin-right: 20%;
-    border-radius: 50;
-    margin-top: 5%;
-    margin-bottom:4%
+    padding: 15px 30px 0px 30px;
+    margin-bottom: 30px;
   }
   
   .sidebar-title > span {
@@ -80,12 +76,9 @@ body {
   }
   
   .sidebar-brand {
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 20px;
     font-weight: 700;
-    width: 100%;
-    padding: 20%;
-    
   }
   
   .sidebar-list {
@@ -206,7 +199,7 @@ body {
     }
   
     #sidebar {
-      display: block;
+      display: none;
     }
   
     .menu-icon {
@@ -215,7 +208,7 @@ body {
     }
   
     .sidebar-title > span {
-      display: hidden;
+      display: inline;
     }
   }
   /* Small <= 768px */
@@ -236,21 +229,8 @@ body {
   /* Extra Small <= 576px */
   
   @media screen and (max-width: 576px) {
-    .header-left {
-    display: none;
+    .hedaer-left {
+      display: none;
+    }
   }
-
-  #sidebar {
-    display: none; /* Hide the sidebar completely */
-  }
-  }
-
-  .cursor-pointer {
-    cursor: pointer;
-  }
-
-  .SurasaYellow {
-    background-color: #F0C903;
-  }
-  
   
