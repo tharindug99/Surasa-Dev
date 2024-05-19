@@ -13,7 +13,7 @@ const Component = () => {
     const nodes = [
         {
           id: 1,
-          name: 'Task 1',
+          name: 'Margherita Pizza',
           deadline: new Date('2024-05-20'),
           type: 'Type A',
           isComplete: true,
@@ -21,7 +21,7 @@ const Component = () => {
         },
         {
           id: 2,
-          name: 'Task 2',
+          name: 'Caesar Salad',
           deadline: new Date('2024-05-22'),
           type: 'Type B',
           isComplete: false,
@@ -29,7 +29,7 @@ const Component = () => {
         },
         {
           id: 3,
-          name: 'Task 3',
+          name: 'Pasta Carbonara',
           deadline: new Date('2024-05-25'),
           type: 'Type C',
           isComplete: true,
@@ -37,16 +37,17 @@ const Component = () => {
         },
       ];
     
-      // Transform sample data
+    
 
   const data = { nodes };
 
   const theme = useTheme(getTheme());
 
   const COLUMNS = [
-    { label: 'Task', renderCell: (item) => item.name },
+    { label: 'Food Items', 
+        renderCell: (item) => item.name },
     {
-      label: 'Deadline',
+      label: 'Description',
       renderCell: (item) =>
         item.deadline.toLocaleDateString('en-US', {
           year: 'numeric',
