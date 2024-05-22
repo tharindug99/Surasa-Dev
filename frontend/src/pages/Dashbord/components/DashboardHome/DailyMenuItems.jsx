@@ -8,7 +8,7 @@ import { getTheme } from '@table-library/react-table-library/baseline';
 
 const key = 'Compact Table';
 
-const Component = () => {
+const DailyMenuItemsTable = () => {
 
     const nodes = [
         {
@@ -66,4 +66,4 @@ const Component = () => {
   return <CompactTable columns={COLUMNS} data={data} theme={theme} />;
 };
 
-export default Component;
+export default DailyMenuItemsTable;
