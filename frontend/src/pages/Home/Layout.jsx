@@ -20,7 +20,6 @@ function Layout() {
       <AboutUs />
       <Booking />
       <ContactUs />
-      <Register />
       <Footer />
     </>
   );
