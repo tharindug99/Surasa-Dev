@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import NavBar from '../../../components/header/NavBar';
 import Footer from '../../../components/footer/Footer';
 
@@ -48,16 +49,14 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8000/api/login", {
-        method: 'POST',
-        body: JSON.stringify(formData),
+      const response = await axios.post("http://localhost:8000/api/login", formData, {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
         },
       });
 
-      const result = await response.json();
+      const result = response.data;
 
       if (response.status === 401) {
         toast.error("Invalid credentials. Please try again.", {

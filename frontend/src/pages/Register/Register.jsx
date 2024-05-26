@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import NavBar from '../../../components/header/NavBar';
 import Footer from '../../../components/footer/Footer';
 
@@ -84,16 +85,14 @@ const Register = () => {
     }
 
     try {
-      let result = await fetch('http://localhost:8000/api/register', {
-        method: 'POST',
-        body: JSON.stringify(formData),
+      const response = await axios.post('http://localhost:8000/api/register', formData, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
       });
 
-      result = await result.json();
+      const result = response.data;
 
       if (result.errors) {
         displayErrorMessages(result.errors);
