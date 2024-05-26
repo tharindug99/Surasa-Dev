@@ -15,6 +15,10 @@ function DashboardHome() {
     setIsModalOpen(false);
   };
 
+  const handleAddproduct = () => {
+    setIsModalOpen(false);
+  }
+
   const handleImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
       setSelectedImage(URL.createObjectURL(event.target.files[0]));
@@ -27,7 +31,7 @@ function DashboardHome() {
 
       <div className="flex justify-between items-center mt-10">
         <div className="text-white font-semibold text-[48px]">
-          Today's Menu Items
+          Product Items
         </div>
         <div className="text-white text-right font-semibold text-[48px]">
           <FiPlusCircle onClick={handleOpenModal} />
@@ -98,6 +102,7 @@ function DashboardHome() {
                 <button
                   type="button"
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  onClick={handleAddproduct}
                 >
                   Add Item
                 </button>
@@ -115,7 +120,8 @@ function DashboardHome() {
       )}
 
       <div className="my-5 rounded-lg">
-          <DailyMenuItemsTable />
+          {/* <DailyMenuItemsTable /> */}
+
       </div>
       
 
