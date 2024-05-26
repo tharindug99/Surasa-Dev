@@ -20,4 +20,9 @@ class ProductController extends Controller
 
         return $product;
     }
+
+    function list()
+    {
+        return Product::all();
+    }
 }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { FiPlusCircle } from "react-icons/fi";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AllProducts from '../components/MenuItems/AllProducts';
 
 function MenuItems() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -154,6 +155,7 @@ function MenuItems() {
           </div>
         </div>
       )}
+      <AllProducts/>
       <ToastContainer />
     </div>
   );
