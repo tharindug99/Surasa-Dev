@@ -5,7 +5,6 @@ import ImageGrid from '../../components/imageGrid/ImageGrid.jsx';
 import AboutUs from '../pages/AboutUs';
 import Booking from '../pages/Booking';
 import ContactUs from '../pages/ContactUs';
-import Register from '../pages/Register';
 import Tabs from '../../components/menu/Tabs';
 
 function Layout() {
@@ -19,7 +18,6 @@ function Layout() {
       <AboutUs />
       <Booking />
       <ContactUs />
-      <Register />
       <Footer />
     </>
   );

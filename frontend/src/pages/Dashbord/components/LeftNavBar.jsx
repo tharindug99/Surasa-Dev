@@ -7,6 +7,7 @@ import logo from '../../../assets/logos/Surasa Logo.png'
 import Component from '../components/DashboardHome/DailyMenuItems';
 
 function LeftNavBar({ openSidebarToggle, OpenSidebar, setCurrentScreen, setOpenSidebarToggle }) {
+  
   return (
     <aside className={`h-full bg-gray-800 overflow-y-auto transition-all duration-500 ${openSidebarToggle ? 'absolute z-20 w-64' : 'hidden md:block md:w-64'}`}>
       <div className='flex justify-between items-center p-4 '>
