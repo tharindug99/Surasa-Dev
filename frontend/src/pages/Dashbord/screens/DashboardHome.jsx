@@ -31,7 +31,7 @@ function DashboardHome() {
 
       <div className="flex justify-between items-center mt-10">
         <div className="text-white font-semibold text-[48px]">
-          Product Items
+          Today's Menu Items
         </div>
         <div className="text-white text-right font-semibold text-[48px]">
           <FiPlusCircle onClick={handleOpenModal} />

@@ -54,7 +54,7 @@ function MenuItems() {
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center mt-10">
         <div className="text-white font-semibold text-[48px]">
-          Today's Menu Items
+          All Food and Beverage Items
         </div>
         <div className="text-white text-right font-semibold text-[48px]">
           <FiPlusCircle onClick={handleOpenModal} />
