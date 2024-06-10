@@ -20,15 +20,16 @@ function AllProducts() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:8000/api/deleteproduct/${id}`)
+    axios.delete(`http://localhost:8000/api/delete/${id}`)
       .then(response => {
-        // Remove the deleted product from the state
+        // console.log('Deleted product details:', response.data); 
         setProducts(products.filter(product => product.id !== id));
       })
       .catch(error => {
         console.error('Error deleting product:', error);
       });
   };
+  
 
   return (
     <div className="container mx-auto p-4">

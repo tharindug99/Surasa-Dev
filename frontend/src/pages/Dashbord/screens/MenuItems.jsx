@@ -37,7 +37,6 @@ function MenuItems() {
     .then(response => {
       console.log(response.data);
       toast.success('Product added successfully!');
-      // Reset input fields
       setName('');
       setFile('');
       setType('food');
