@@ -40,38 +40,51 @@ function AllProducts() {
     setName('');
     setDescription('');
     setPrice('');
-    setFile(null);
+    setFile('');
   };
 
+  
   // Update product
-  const updateProduct = (id) => {
-    const formData = new FormData();
-    formData.append('type', type);
-    formData.append('name', name);
-    formData.append('description', description);
-    formData.append('price', price);
-    if (file) formData.append('file', file);
-    
-    // Log form data contents
-    console.log('FormData contents:');
-    for (const [key, value] of formData.entries()) {
-      console.log(`${key}: ${value}`);
-    }
-
-    axios.patch(`http://localhost:8000/api/edit/${id}`, formData, {
-      // headers: {
-      //   'Content-Type': 'multipart/form-data'
-      // }
-    })
-    .then(response => {
-      console.log('Product updated successfully:', response.data);
-      setProducts(products.map(product => product.id === id ? response.data : product));
-      handleCloseModal();
-    })
-    .catch(error => {
-      console.error('Error updating product:', error);
-    });
+const updateProduct = (id) => {
+  const formData = new FormData();
+  formData.append('file', file);
+  const data = {
+    type,
+    name,
+    description,
+    price,
+    img_path: file? `products/${formData.get('file').name}` : currentProduct.img_path,
   };
+
+  if (file) {
+    // Convert the file to a base64-encoded string
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      data.file = reader.result.split(',')[1];
+      updateProductRequest(id, data);
+    };
+  } else {
+    updateProductRequest(id, data);
+  }
+};
+
+// Make the patch request
+const updateProductRequest = (id, data,formData) => {
+  axios.patch(`http://localhost:8000/api/edit/${id}`, data, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+ .then(response => {
+    console.log('Product updated successfully:', response.data);
+    console.log('File name:', formData.get('file').name);
+  })
+ .catch(error => {
+    console.error('Error updating product:', error);
+  });
+  setIsModalOpen(false);
+};
 
   // Delete product
   const handleDelete = (id) => {
