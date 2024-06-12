@@ -39,9 +39,45 @@ class ProductController extends Controller
         
     }
 
-    function edit()
+    function getProduct($id)
     {
-        return "edit";
+        return Product::find($id);
     }
+
+    function edit($id, Request $request)
+{
+    $product = Product::find($id);
+
+    if ($request->has('name')) {
+        $request->validate([
+            'name' => 'required|string',
+        ]);
+        $product->name = $request->input('name');
+    }
+
+    if ($request->has('price')) {
+        $request->validate([
+            'price' => 'required|numeric',
+        ]);
+        $product->price = $request->input('price');
+    }
+
+    if ($request->has('description')) {
+        $request->validate([
+            'description' => 'required|string',
+        ]);
+        $product->description = $request->input('description');
+    }
+
+    if ($request->file('file')) {
+        $request->validate([
+            'file' => 'nullable|file',
+        ]);
+        $product->img_path = $request->file('file')->store('products');
+    }
+
+    $product->save();
+    return $product;
+}
 
 }
