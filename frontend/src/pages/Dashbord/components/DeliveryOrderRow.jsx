@@ -3,7 +3,14 @@ import React from 'react';
 function DeliveryOrderRow({ order, onAccept, onDecline }) {
   return (
     <tr className="border-b">
-      <td className="py-3 px-4 text-left">{order.itemName}</td>
+      <td className="py-3 px-4 text-left">{order.id}</td>
+      <td className="py-3 px-4 text-left">
+        <ul>
+          {order.itemNames.map((itemName, index) => (
+            <li key={index}>{itemName}</li>
+          ))}
+        </ul>
+      </td>
       <td className="py-3 px-4 text-left">{order.quantity}</td>
       <td className="py-3 px-4 text-left">{order.totalCost}</td>
       <td className="py-3 px-4 text-left">{order.deliveryAddress}</td>
