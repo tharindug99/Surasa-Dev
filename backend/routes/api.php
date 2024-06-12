@@ -22,6 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('register', [UserController::class,'register']);
 Route::post('login', [UserController::class,'login']);
+Route::get('getAllUsers', [UserController::class,'getAllUsers']);
+Route::get('getUserByID/{id}', [UserController::class,'getUserByID']);
+Route::patch('editUser/{id}', [UserController::class,'editUser']);
+Route::delete('deleteUser/{id}', [UserController::class,'deleteUser']);
 
 
 Route::post('addproduct', [ProductController::class,'addProduct']);

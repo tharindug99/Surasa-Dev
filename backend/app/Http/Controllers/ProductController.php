@@ -75,7 +75,7 @@ class ProductController extends Controller
             ]);
             $fileName = time(). '.'. $request->file('file')->getClientOriginalExtension();
             $request->file('file')->move(public_path('products'), $fileName);
-            $product->img_path = 'products/'. $fileName;
+            $product->img_path = 'products/'. $fileName;    
         }
     
         $product->save();
