@@ -26,4 +26,6 @@ Route::post('login', [UserController::class,'login']);
 
 Route::post('addproduct', [ProductController::class,'addProduct']);
 Route::get('list', [ProductController::class,'list']);
-
+Route::delete('delete/{id}', [ProductController::class,'delete']);
+Route::patch('edit/{id}', [ProductController::class,'edit']);
+Route::get('product/{id}', [ProductController::class,'getProduct']);
