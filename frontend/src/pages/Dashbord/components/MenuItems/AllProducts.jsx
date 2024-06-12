@@ -40,7 +40,7 @@ function AllProducts() {
     setName('');
     setDescription('');
     setPrice('');
-    setFile('');
+    setFile(null);
   };
 
   
