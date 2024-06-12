@@ -35,14 +35,12 @@ function AboutUs() {
     return (
         <section
             ref={aboutRef}
-            className="flex overflow-hidden relative flex-col justify-center items-end px-16 py-20 text-white min-h-[845px] max-md:px-5 mx-10  mb-20 rounded-[50px] "
+            className="relative flex flex-col  items-end px-16 py-20 text-white  max-md:px-5 bg-cover ] "
         >
             <img
-
-
                 src={aboutBgImage}
                 alt="Background image"
-                className="object-cover absolute inset-0 size-full"
+                className="absolute inset-0 w-full h-full object-cover"
             />
             <animated.div
                 style={props}
