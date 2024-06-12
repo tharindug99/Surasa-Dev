@@ -57,7 +57,12 @@ const updateProduct = (id) => {
     img_path: file? `products/${formData.get('file').name}` : currentProduct.img_path,
   };
   console.log(data.img_path);
+  Object.keys(data).forEach((key) => {
+    formData.append(key, data[key]);
+  });
+  updateProductRequest(id, data);
 
+  
   if (file) {
     // Convert the file to a base64-encoded string
     const reader = new FileReader();
@@ -80,7 +85,7 @@ const updateProductRequest = (id, data,formData) => {
   })
  .then(response => {
     console.log('Product updated successfully:', response.data);
-    
+
   })
  .catch(error => {
     console.error('Error updating product:', error);
