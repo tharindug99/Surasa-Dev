@@ -45,39 +45,41 @@ class ProductController extends Controller
     }
 
     function edit($id, Request $request)
-{
-    $product = Product::find($id);
-
-    if ($request->has('name')) {
-        $request->validate([
-            'name' => 'required|string',
-        ]);
-        $product->name = $request->input('name');
+    {
+        $product = Product::find($id);
+    
+        if ($request->has('name')) {
+            $request->validate([
+                'name' => 'required|string',
+            ]);
+            $product->name = $request->input('name');
+        }
+    
+        if ($request->has('price')) {
+            $request->validate([
+                'price' => 'required|numeric',
+            ]);
+            $product->price = $request->input('price');
+        }
+    
+        if ($request->has('description')) {
+            $request->validate([
+                'description' => 'required|string',
+            ]);
+            $product->description = $request->input('description');
+        }
+    
+        if ($request->file('file')) {
+            $request->validate([
+                'file' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
+            ]);
+            $fileName = time(). '.'. $request->file('file')->getClientOriginalExtension();
+            $request->file('file')->move(public_path('products'), $fileName);
+            $product->img_path = 'products/'. $fileName;
+        }
+    
+        $product->save();
+        return $product;
     }
-
-    if ($request->has('price')) {
-        $request->validate([
-            'price' => 'required|numeric',
-        ]);
-        $product->price = $request->input('price');
-    }
-
-    if ($request->has('description')) {
-        $request->validate([
-            'description' => 'required|string',
-        ]);
-        $product->description = $request->input('description');
-    }
-
-    if ($request->file('file')) {
-        $request->validate([
-            'file' => 'nullable|file',
-        ]);
-        $product->img_path = $request->file('file')->store('products');
-    }
-
-    $product->save();
-    return $product;
-}
 
 }

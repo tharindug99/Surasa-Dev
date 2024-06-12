@@ -48,6 +48,7 @@ function AllProducts() {
 const updateProduct = (id) => {
   const formData = new FormData();
   formData.append('file', file);
+  console.log("hii")
   const data = {
     type,
     name,
@@ -55,6 +56,7 @@ const updateProduct = (id) => {
     price,
     img_path: file? `products/${formData.get('file').name}` : currentProduct.img_path,
   };
+  console.log(data.img_path);
 
   if (file) {
     // Convert the file to a base64-encoded string
@@ -78,7 +80,7 @@ const updateProductRequest = (id, data,formData) => {
   })
  .then(response => {
     console.log('Product updated successfully:', response.data);
-    console.log('File name:', formData.get('file').name);
+    
   })
  .catch(error => {
     console.error('Error updating product:', error);
