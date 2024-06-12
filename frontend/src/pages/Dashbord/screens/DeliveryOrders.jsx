@@ -4,17 +4,22 @@ import DeliveryOrderRow from '../components/DeliveryOrderRow';
 const deliveryOrdersData = [
   {
     id: 1,
-    itemNames: ['Item 1', 'Item 2'],
-    quantity: 2,
+    items: [
+      { name: 'Burger', quantity: 3 },
+      { name: 'Mojito', quantity: 1 },
+      { name: 'Fried Rice', quantity: 2 }
+    ],
     totalCost: '$20',
     deliveryAddress: '123 Main St, City, Country',
     contactNo: '123-456-7890'
   },
   {
     id: 2,
-    itemNames: ['Item 3'],
-    quantity: 1,
-    totalCost: '$10',
+    items: [
+      { name: 'Pizza', quantity: 1 },
+      { name: 'Pasta', quantity: 2 }
+    ],
+    totalCost: '$15',
     deliveryAddress: '456 Elm St, City, Country',
     contactNo: '987-654-3210'
   }
@@ -39,7 +44,6 @@ function DeliveryOrders() {
             <tr>
               <th className="py-3 px-4 text-left uppercase font-semibold text-sm">Order ID</th>
               <th className="py-3 px-4 text-left uppercase font-semibold text-sm">Item Names</th>
-              <th className="py-3 px-4 text-left uppercase font-semibold text-sm">Quantity</th>
               <th className="py-3 px-4 text-left uppercase font-semibold text-sm">Total Cost</th>
               <th className="py-3 px-4 text-left uppercase font-semibold text-sm">Delivery Address</th>
               <th className="py-3 px-4 text-left uppercase font-semibold text-sm">Contact No</th>
