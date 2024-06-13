@@ -8,6 +8,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\MessagesContactUs_Controller;
 use App\Http\Controllers\BookingRequests_Controller;
 use App\Http\Controllers\MenuItemController;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -62,7 +63,10 @@ Route::delete('/messages/{id}', [MessagesContactUs_Controller::class, 'deleteMsg
 
 //-------------------------------DELIVERY ORDERS -------------------------------\\\
 
-
+Route::get('/orders', [OrderController::class, 'index']);
+Route::get('/orders/{userId}', [OrderController::class, 'show']);
+Route::post('/orders', [OrderController::class, 'store']);
+Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
 
 
 //-------------------------------BOOKING REQUESTS -------------------------------\\\
@@ -73,7 +77,9 @@ Route::post('/booking-requests', [BookingRequests_Controller::class, 'createBook
 Route::put('/booking-requests/{id}', [BookingRequests_Controller::class, 'updateBookingRequest']); // Update an existing booking request by ID
 Route::delete('/booking-requests/{id}', [BookingRequests_Controller::class, 'deleteBookingRequest']); // Delete a booking request by ID
 
+
 //-------------------------------Menu Items (Displayed on website) -------------------------------\\\
+
 Route::post('/add-menu-item', [MenuItemController::class, 'addMenuItem']);
 Route::get('/menu-items', [MenuItemController::class, 'getAllMenuItems']);
 Route::delete('/menu-items/{id}', [MenuItemController::class, 'deleteMenuItem']);
