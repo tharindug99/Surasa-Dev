@@ -6,12 +6,11 @@ function DeliveryOrderRow({ order, onAccept, onDecline }) {
       <td className="py-3 px-4 text-left">{order.id}</td>
       <td className="py-3 px-4 text-left">
         <ul>
-          {order.itemNames.map((itemName, index) => (
-            <li key={index}>{itemName}</li>
+          {order.items.map((item, index) => (
+            <li key={index}>{item.name} - {item.quantity}</li>
           ))}
         </ul>
       </td>
-      <td className="py-3 px-4 text-left">{order.quantity}</td>
       <td className="py-3 px-4 text-left">{order.totalCost}</td>
       <td className="py-3 px-4 text-left">{order.deliveryAddress}</td>
       <td className="py-3 px-4 text-left">{order.contactNo}</td>
