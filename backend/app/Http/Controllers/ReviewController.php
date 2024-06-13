@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Review;
-use App\Models\User; // Make sure you include the User model for validation purposes
 use Illuminate\Support\Facades\Validator;
 
 class ReviewController extends Controller
