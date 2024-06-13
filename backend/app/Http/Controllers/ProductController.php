@@ -4,22 +4,47 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use CloudinaryLabs\CloudinaryLaravel\CloudinaryEngine;
 
 class ProductController extends Controller
 {
-    function addProduct(Request $request)
-    {   
-        $product = new Product;
+    public function addProduct(Request $request)
+    {
+        // Validate the request inputs
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'type' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
 
-        $product->name=$request->input('name');
-        $product->type=$request->input('type');
-        $product->price=$request->input('price');
-        $product->description=$request->input('description');
-        $product->img_path=$request->file('file')->store('products');
-        $product->save();
+        // Store the image on Cloudinary
+        $uploadedFile = Cloudinary::upload($request->file('file')->getRealPath(), [
+            'folder' => 'product'
+        ]);
 
-        return $product;
+        // Ensure the upload response is of type CloudinaryEngine
+        if ($uploadedFile instanceof CloudinaryEngine) {
+            // Get the secure URL of the uploaded image
+            $secureUrl = $uploadedFile->getSecurePath();
+
+            // Create a new Product instance
+            $product = new Product;
+            $product->name = $request->input('name');
+            $product->type = $request->input('type');
+            $product->price = $request->input('price');
+            $product->description = $request->input('description');
+            $product->img_path = $secureUrl; // Store the Cloudinary image URL
+            $product->save();
+
+            return response()->json($product, 201);
+        } else {
+            return response()->json(['error' => 'Failed to upload image to Cloudinary'], 500);
+        }
     }
+
 
     function list()
     {
@@ -75,7 +100,7 @@ class ProductController extends Controller
             ]);
             $fileName = time(). '.'. $request->file('file')->getClientOriginalExtension();
             $request->file('file')->move(public_path('products'), $fileName);
-            $product->img_path = 'products/'. $fileName;
+            $product->img_path = 'products/'. $fileName;    
         }
     
         $product->save();

@@ -10,11 +10,12 @@ function AllProducts() {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [file, setFile] = useState(null);
-
+  
   // Fetch all products
   useEffect(() => {
     axios.get('http://localhost:8000/api/list')
       .then(response => {
+        console.log(response.data);
         setProducts(response.data);
       })
       .catch(error => {
@@ -54,26 +55,12 @@ const updateProduct = (id) => {
     name,
     description,
     price,
-    img_path: file? `products/${formData.get('file').name}` : currentProduct.img_path,
+    // img_path: file? `products/${formData.get('file').name}` : currentProduct.img_path,
   };
-  console.log(data.img_path);
   Object.keys(data).forEach((key) => {
     formData.append(key, data[key]);
   });
   updateProductRequest(id, data);
-
-  
-  if (file) {
-    // Convert the file to a base64-encoded string
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      data.file = reader.result.split(',')[1];
-      updateProductRequest(id, data);
-    };
-  } else {
-    updateProductRequest(id, data);
-  }
 };
 
 // Make the patch request
@@ -85,11 +72,30 @@ const updateProductRequest = (id, data,formData) => {
   })
  .then(response => {
     console.log('Product updated successfully:', response.data);
-
   })
  .catch(error => {
     console.error('Error updating product:', error);
   });
+
+  if (file) {
+    axios.patch(`http://localhost:8000/api/edit/${id}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(response => {
+      console.log('Image updated successfully:', response.data);
+   })
+    .catch(error => {
+      console.error('Error updating Image:', error);
+    });
+  }
+
+
+
+
+
+
   setIsModalOpen(false);
 };
 
@@ -110,7 +116,7 @@ const updateProductRequest = (id, data,formData) => {
         {products.map(product => (
           <div key={product.id} className="max-w-xs w-full sm:w-1/2 md:w-1/3 lg:w-1/6 flex-grow flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden m-2">
             <div className="flex justify-center items-center p-4">
-              <img className="h-32 w-32 object-cover rounded-lg" src={`http://localhost:8000/${product.img_path}`} alt={product.name} />
+              <img className="h-32 w-32 object-cover rounded-lg" src={`${product.img_path}`} alt={product.name} />
             </div>
             <div className="px-6 py-4">
               <div className="font-bold text-black text-xl mb-2">{product.name}</div>
