@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,3 +34,6 @@ Route::get('list', [ProductController::class,'list']);
 Route::delete('delete/{id}', [ProductController::class,'delete']);
 Route::patch('edit/{id}', [ProductController::class,'edit']);
 Route::get('product/{id}', [ProductController::class,'getProduct']);
+
+
+Route::get('getReviews', [ReviewController::class,'getReviews']);
