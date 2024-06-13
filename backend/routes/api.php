@@ -36,4 +36,13 @@ Route::patch('edit/{id}', [ProductController::class,'edit']);
 Route::get('product/{id}', [ProductController::class,'getProduct']);
 
 
-Route::get('getReviews', [ReviewController::class,'getReviews']);
+// Route to fetch all reviews
+Route::get('/reviews', [ReviewController::class, 'getReviews']);
+// Route to fetch a review by ID
+Route::get('/reviews/{id}', [ReviewController::class, 'getReviewById']);
+// Route to add a new review
+Route::post('/reviews', [ReviewController::class, 'addReview']);
+// Route to update an existing review
+Route::patch('/reviews/{id}', [ReviewController::class, 'updateReview']);
+// Route to delete a review
+Route::delete('/reviews/{id}', [ReviewController::class, 'deleteReview']);
